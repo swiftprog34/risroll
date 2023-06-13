@@ -67,6 +67,9 @@
                                 <button type="submit" class="btn btn-primary">Обновить</button>
                             </div>
                         </form>
+                        <a class="btn btn-info btn-sm" href="{{ route('fetchMobidelData', ['restaurantID' => $site['restaurantID'], 'wid' => $site['wid']]) }}">
+                            Выгрузить товары и категории из Мобидел
+                        </a>
                     </div>
                 </div>
             </div>

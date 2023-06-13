@@ -25,9 +25,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware('role:admin')->prefix('admin_panel')->group( function () {
+Route::middleware('role:admin')->prefix('admin_panel')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('homeAdmin');
     Route::resource('site', \App\Http\Controllers\Admin\SiteController::class);
+    Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);
+    Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
+    Route::get('/fetchMobidelData/{restaurantID}/{wid}',
+        [\App\Http\Controllers\MobidelController::class, 'fetchData'])->name('fetchMobidelData');
 });
 
 

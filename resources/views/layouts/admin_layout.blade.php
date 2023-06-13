@@ -29,11 +29,6 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-    <!-- Preloader -->
-    <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="/admin/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-    </div>
-
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
@@ -77,18 +72,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
+                                <a href="{{ route('product.index') }}" class="nav-link">
                                     <p>Товары</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
+                                <a href="{{ route('category.index') }}" class="nav-link">
                                     <p>Категории</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
-                                    <p>Страницы</p>
                                 </a>
                             </li>
                         </ul>
@@ -110,6 +100,27 @@
                             <li class="nav-item">
                                 <a href="./index.html" class="nav-link">
                                     <p>Добавить страницу</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Доставка и самовывоз
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="./index.html" class="nav-link">
+                                    <p>Точки выдачи заказов</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./index.html" class="nav-link">
+                                    <p>Зоны доставки</p>
                                 </a>
                             </li>
                         </ul>
