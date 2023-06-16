@@ -535,7 +535,7 @@
                     responsive: {
                         1480: {
                             center: true,
-                            items: 1.47,
+
                             loop: true,
                             nav: true,
                             autoplay: true,
@@ -545,7 +545,7 @@
                         },
                         767: {
                             center: true,
-                            items: 1.3,
+
                             loop: true,
                             nav: true,
                             autoplay: true,
@@ -571,7 +571,7 @@
         <div class="container">
             <div class="heading mobile-none000">
                 <div class="line"><img src="/client/images/de-line-1.png" alt=""/></div>
-                <h1>RisRoll - Доставка готовых блюд в Тюмени!</h1>
+                <h1>RisRoll - Доставка готовых блюд в Тюмени! {{session()->getId()}}</h1>
                 <div class="line"><img src="/client/images/de-line-1.png" alt=""/></div>
             </div>
 

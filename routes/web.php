@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\Client\ClientController::class, 'index'])->name('index');
-Route::get('/product-category/{id}', [App\Http\Controllers\Client\ClientController::class, 'category'])->name('category');
-Route::get('/product/{id}', [App\Http\Controllers\Client\ClientController::class, 'product'])->name('product');
+//Route::group(['prefix' => '{city}'], function() {
+    Route::get('/', [App\Http\Controllers\Client\ClientController::class, 'index'])->name('index');
+    Route::get('/product-category/{id}', [App\Http\Controllers\Client\ClientController::class, 'category'])->name('category');
+    Route::get('/product/{id}', [App\Http\Controllers\Client\ClientController::class, 'product'])->name('product');
+//});
 
 Auth::routes();
 
@@ -30,6 +32,8 @@ Route::middleware('role:admin')->prefix('admin_panel')->group(function () {
     Route::resource('site', \App\Http\Controllers\Admin\SiteController::class);
     Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);
     Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('phone', \App\Http\Controllers\Admin\PhoneController::class);
+    Route::resource('pickup_point', \App\Http\Controllers\Admin\PickupPointController::class);
     Route::get('/fetchMobidelData/{restaurantID}/{wid}',
         [\App\Http\Controllers\MobidelController::class, 'fetchData'])->name('fetchMobidelData');
 });
