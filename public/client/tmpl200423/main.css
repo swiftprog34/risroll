@@ -1449,7 +1449,7 @@ img, p, span, h1, h2, h3, a, label {
 
 .readmore_button_open {
     background: #c20609;
-    color: #fff;
+    color: #fff !important;
 }
 
 .readmore_button_close {

@@ -246,77 +246,24 @@
 
             <div class="container">
                 <div class="menu">
-
-
-                    <div class="menu_item">
-                        <img class="preview" src="/client/admin/images/categories/goods01.png@20230423141958"
-                             alt="Холодные роллы"/>
-                        <a href="holodnie-rolli.html">Холодные роллы</a>
-                    </div>
-
-
-                    <div class="menu_item">
-                        <img class="preview" src="/client/admin/images/categories/goods11.jpg@20230423142020"
-                             alt="Запечённые роллы"/>
-                        <a href="zapechennie-rolli.html">Запечённые роллы</a>
-                    </div>
-
-
-                    <div class="menu_item">
-                        <img class="preview" src="/client/admin/images/categories/goods02.png@20230423142038"
-                             alt="Тёплые роллы"/>
-                        <a href="teplie-rolli.html">Тёплые роллы</a>
-                    </div>
-
-
-                    <div class="menu_item">
-                        <img class="preview" src="/client/admin/images/categories/goods03.jpg@20230423142059"
-                             alt="Сеты"/>
-                        <a href="seti.html">Сеты</a>
-                    </div>
-
-
-                    <div class="menu_item">
-                        <img class="preview" src="/client/admin/images/categories/goods04.jpg@20230423142111"
-                             alt="Поке"/>
-                        <a href="poke.html">Поке</a>
-                    </div>
-
-
-                    <div class="menu_item">
-                        <img class="preview" src="/client/admin/images/categories/goods05.jpeg@20230423142138"
-                             alt="Том ям"/>
-                        <a href="tom-jam.html">Том ям</a>
-                    </div>
-
-
-                    <div class="menu_item">
-                        <img class="preview" src="/client/admin/images/categories/goods06.jpg@20230423142209"
-                             alt="Гунканы"/>
-                        <a href="gunkani.html">Гунканы</a>
-                    </div>
-
-
-                    <div class="menu_item">
-                        <img class="preview" src="/client/admin/images/categories/goods07.jpg@20230423142243"
-                             alt="Закуски"/>
-                        <a href="zakuski.html">Закуски</a>
-                    </div>
+                    @foreach($categoriesMainDesktop as $category)
+                        <div class="menu_item">
+                            <img class="preview" src="/client/admin/images/categories/goods01.png@20230423141958"
+                                 alt="Холодные роллы"/>
+                            <a href="{{route('category', $category->uid)}}">{{$category->title}}</a>
+                        </div>
+                    @endforeach
 
 
                     <div class="menu_item"><a href="index.html#">Еще</a><img class="arrow"
                                                                              src="/client/images/icons/ic_menu_down_black.png"
                                                                              alt=""/>
                         <ul class="submenu h4">
-                            <li><a href="sandvichi.html">Сэндвичи</a></li>
-
-
-                            <li><a href="sousi.html">Соусы</a></li>
-
-
-                            <li><a href="napitki.html">Напитки</a></li>
-
-
+                            @foreach($categories as $category)
+                                @if($loop->index > 8)
+                                    <li><a href="{{route('category', $category->uid)}}">{{$category->title}}</a></li>
+                                @endif
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -395,53 +342,13 @@
             </div>
 
             <div class="win_categories_grid">
-                <a class="item r3" href="holodnie-rolli.html">
-                    <img class="photo" src="/client/admin/images/categories/goods01.png@20230423141958"
-                         alt="Холодные роллы"/>
-                    <span class="cat">Холодные роллы</span>
-                </a>
-                <a class="item r3" href="zapechennie-rolli.html">
-                    <img class="photo" src="/client/admin/images/categories/goods11.jpg@20230423142020"
-                         alt="Запечённые роллы"/>
-                    <span class="cat">Запечённые роллы</span>
-                </a>
-                <a class="item r3" href="teplie-rolli.html">
-                    <img class="photo" src="/client/admin/images/categories/goods02.png@20230423142038"
-                         alt="Тёплые роллы"/>
-                    <span class="cat">Тёплые роллы</span>
-                </a>
-                <a class="item r3" href="seti.html">
-                    <img class="photo" src="/client/admin/images/categories/goods03.jpg@20230423142059" alt="Сеты"/>
-                    <span class="cat">Сеты</span>
-                </a>
-                <a class="item r3" href="poke.html">
-                    <img class="photo" src="/client/admin/images/categories/goods04.jpg@20230423142111" alt="Поке"/>
-                    <span class="cat">Поке</span>
-                </a>
-                <a class="item r3" href="tom-jam.html">
-                    <img class="photo" src="/client/admin/images/categories/goods05.jpeg@20230423142138" alt="Том ям"/>
-                    <span class="cat">Том ям</span>
-                </a>
-                <a class="item r3" href="gunkani.html">
-                    <img class="photo" src="/client/admin/images/categories/goods06.jpg@20230423142209" alt="Гунканы"/>
-                    <span class="cat">Гунканы</span>
-                </a>
-                <a class="item r3" href="zakuski.html">
-                    <img class="photo" src="/client/admin/images/categories/goods07.jpg@20230423142243" alt="Закуски"/>
-                    <span class="cat">Закуски</span>
-                </a>
-                <a class="item r3" href="sandvichi.html">
-                    <img class="photo" src="/client/admin/images/categories/goods08.jpg@20230423142325" alt="Сэндвичи"/>
-                    <span class="cat">Сэндвичи</span>
-                </a>
-                <a class="item r3" href="sousi.html">
-                    <img class="photo" src="/client/admin/images/categories/goods10.jpg@20230423142514" alt="Соусы"/>
-                    <span class="cat">Соусы</span>
-                </a>
-                <a class="item r3" href="napitki.html">
-                    <img class="photo" src="/client/admin/images/categories/goods09.jpg@20230423142534" alt="Напитки"/>
-                    <span class="cat">Напитки</span>
-                </a>
+                @foreach($categories as $category)
+                    <a class="item r3" href="{{route('category', $category->uid)}}">
+                        <img class="photo" src="/client/admin/images/categories/goods01.png@20230423141958"
+                             alt="{{$category->title}}"/>
+                        <span class="cat">{{$category->title}}</span>
+                    </a>
+                @endforeach
             </div>
 
         </div>
@@ -551,41 +458,12 @@
 
         <label>Наше меню:</label>
         <div class="menu_items">
-            <a href="holodnie-rolli.html">
-                <img src="/client/admin/images/categories/goods01.png@20230423141958" width="40px"
-                     alt="Холодные роллы"/>
-                Холодные роллы </a>
-            <a href="zapechennie-rolli.html">
-                <img src="/client/admin/images/categories/goods11.jpg@20230423142020" width="40px"
-                     alt="Запечённые роллы"/>
-                Запечённые роллы </a>
-            <a href="teplie-rolli.html">
-                <img src="/client/admin/images/categories/goods02.png@20230423142038" width="40px" alt="Тёплые роллы"/>
-                Тёплые роллы </a>
-            <a href="seti.html">
-                <img src="/client/admin/images/categories/goods03.jpg@20230423142059" width="40px" alt="Сеты"/>
-                Сеты </a>
-            <a href="poke.html">
-                <img src="/client/admin/images/categories/goods04.jpg@20230423142111" width="40px" alt="Поке"/>
-                Поке </a>
-            <a href="tom-jam.html">
-                <img src="/client/admin/images/categories/goods05.jpeg@20230423142138" width="40px" alt="Том ям"/>
-                Том ям </a>
-            <a href="gunkani.html">
-                <img src="/client/admin/images/categories/goods06.jpg@20230423142209" width="40px" alt="Гунканы"/>
-                Гунканы </a>
-            <a href="zakuski.html">
-                <img src="/client/admin/images/categories/goods07.jpg@20230423142243" width="40px" alt="Закуски"/>
-                Закуски </a>
-            <a href="sandvichi.html">
-                <img src="/client/admin/images/categories/goods08.jpg@20230423142325" width="40px" alt="Сэндвичи"/>
-                Сэндвичи </a>
-            <a href="sousi.html">
-                <img src="/client/admin/images/categories/goods10.jpg@20230423142514" width="40px" alt="Соусы"/>
-                Соусы </a>
-            <a href="napitki.html">
-                <img src="/client/admin/images/categories/goods09.jpg@20230423142534" width="40px" alt="Напитки"/>
-                Напитки </a>
+            @foreach($categories as $category)
+                <a href="{{route('category', $category->uid)}}">
+                    <img src="/client/admin/images/categories/goods01.png@20230423141958" width="40px"
+                         alt="{{$category->title}}"/>
+                    {{ $category->title }} </a>
+            @endforeach
         </div>
 
         <br>
@@ -729,84 +607,15 @@
         <section class="categories2">
 
             <div class="container">
-
-                <a class="category" href="holodnie-rolli.html"
-                   onclick="(document.getElementById('page-preloader').style.display='flex')">
-                    <img class="" src="/client/admin/images//client/admin/images/categories/goods01.png@20230423141958"
-                         alt=""/>
-                    <span class="s_h3">Холодные роллы</span>
-                </a>
-
-
-                <a class="category" href="zapechennie-rolli.html"
-                   onclick="(document.getElementById('page-preloader').style.display='flex')">
-                    <img class="" src="/client/admin/images/categories/goods11.jpg@20230423142020" alt=""/>
-                    <span class="s_h3">Запечённые роллы</span>
-                </a>
-
-
-                <a class="category" href="teplie-rolli.html"
-                   onclick="(document.getElementById('page-preloader').style.display='flex')">
-                    <img class="" src="/client/admin/images/categories/goods02.png@20230423142038" alt=""/>
-                    <span class="s_h3">Тёплые роллы</span>
-                </a>
-
-
-                <a class="category" href="seti.html"
-                   onclick="(document.getElementById('page-preloader').style.display='flex')">
-                    <img class="" src="/client/admin/images/categories/goods03.jpg@20230423142059" alt=""/>
-                    <span class="s_h3">Сеты</span>
-                </a>
-
-
-                <a class="category" href="poke.html"
-                   onclick="(document.getElementById('page-preloader').style.display='flex')">
-                    <img class="" src="/client/admin/images/categories/goods04.jpg@20230423142111" alt=""/>
-                    <span class="s_h3">Поке</span>
-                </a>
-
-
-                <a class="category" href="tom-jam.html"
-                   onclick="(document.getElementById('page-preloader').style.display='flex')">
-                    <img class="" src="/client/admin/images/categories/goods05.jpeg@20230423142138" alt=""/>
-                    <span class="s_h3">Том ям</span>
-                </a>
-
-
-                <a class="category" href="gunkani.html"
-                   onclick="(document.getElementById('page-preloader').style.display='flex')">
-                    <img class="" src="/client/admin/images/categories/goods06.jpg@20230423142209" alt=""/>
-                    <span class="s_h3">Гунканы</span>
-                </a>
-
-
-                <a class="category" href="zakuski.html"
-                   onclick="(document.getElementById('page-preloader').style.display='flex')">
-                    <img class="" src="/client/admin/images/categories/goods07.jpg@20230423142243" alt=""/>
-                    <span class="s_h3">Закуски</span>
-                </a>
-
-
-                <a class="category" href="sandvichi.html"
-                   onclick="(document.getElementById('page-preloader').style.display='flex')">
-                    <img class="" src="/client/admin/images/categories/goods08.jpg@20230423142325" alt=""/>
-                    <span class="s_h3">Сэндвичи</span>
-                </a>
-
-
-                <a class="category" href="sousi.html"
-                   onclick="(document.getElementById('page-preloader').style.display='flex')">
-                    <img class="" src="/client/admin/images/categories/goods10.jpg@20230423142514" alt=""/>
-                    <span class="s_h3">Соусы</span>
-                </a>
-
-
-                <a class="category" href="napitki.html"
-                   onclick="(document.getElementById('page-preloader').style.display='flex')">
-                    <img class="" src="/client/admin/images/categories/goods09.jpg@20230423142534" alt=""/>
-                    <span class="s_h3">Напитки</span>
-                </a>
-
+                @foreach($categories as $category)
+                    <a class="category" href="{{route('category', $category->uid)}}"
+                       onclick="(document.getElementById('page-preloader').style.display='flex')">
+                        <img class=""
+                             src="/client/admin/images//client/admin/images/categories/goods01.png@20230423141958"
+                             alt="{{$category->title}}"/>
+                        <span class="s_h3">{{ $category->title }}</span>
+                    </a>
+                @endforeach
             </div>
         </section>
 
@@ -824,565 +633,437 @@
             </div>
 
             <div class="products-grid st_grid">
-                <div class="product-item ani st_item" id="item-87" data-price="880" data-tags="" data-pos="1">
-                    <div class="image cover">
-                        <a href="seti/87-set-na-dvoih.html#">
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods03/8127685816444e1d26efbd1.33806843.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods03/8127685816444e1d26efbd1.33806843.jpg"
-                                           alt=""/></noscript>
-                        </a>
+                @foreach($sety as $set)
+                    <div class="product-item ani st_item" id="item-{{$set->id}}" data-price="{{$set->price}}"
+                         data-tags="" data-pos="{{$loop->index}}">
+                        <div class="image cover">
+                            <a href="{{route('product', $set->uid)}}">
+                                <img class="lazyImg"
+                                     src="/client/images/noimg.png"
+                                     data-original="/client/admin/images/maxi/goods03/8127685816444e1d26efbd1.33806843.jpg"
+                                     title="" alt=""/>
+                                <noscript><img
+                                        src="/client/admin/images/maxi/goods03/8127685816444e1d26efbd1.33806843.jpg"
+                                        alt=""/></noscript>
+                            </a>
 
-                    </div>
-
-                    <div class="text">
-                        <a href="seti/87-set-na-dvoih.html#">
-                            <h3 class="title">Сет на двоих</h3>
-                            <p class="desc">Филадельфия фреш, Калифорния, Хосомаки с Креветкой, Хосомаки с Огурцом; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">Вес: 770г.</span>
-                            <input type='hidden' id='price-87' value='880' data-external_id=''>
                         </div>
 
-                        <div class="cost-line">
-                            <p class="cost">
-                                880₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="87">Добавить</div>
+                        <div class="text">
+                            <a href="seti/87-set-na-dvoih.html#">
+                                <h3 class="title">{{$set->title}}</h3>
+                                <p class="desc">{{$set->text}}</p>
+                            </a>
+
+                            <div class="weight">
+                                <span class="s_h3">Вес: xxxx.</span>
+                                <input type='hidden' id='price-{{$set->id}}' value='{{$set->price}}'
+                                       data-external_id=''>
                             </div>
 
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            <div class="cost-line">
+                                <p class="cost">
+                                    {{$set->price}}₽
+                                </p>
+                                <div class="button-passive ">
+                                    <div class="s_h3 addToCart" data-id="{{$set->id}}">Добавить</div>
+                                </div>
 
-                <div class="product-item ani st_item" id="item-88" data-price="950" data-tags="" data-pos="2">
-
-
-                    <div class="image cover">
-                        <a href="seti/88-premium.html#">
-                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods03/18614242256444e203d8f491.21090926.jpg"></div>-->
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods03/18614242256444e203d8f491.21090926.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods03/18614242256444e203d8f491.21090926.jpg"
-                                           alt=""/></noscript>
-                        </a>
-
-                    </div>
-
-                    <div class="text">
-                        <a href="seti/88-premium.html#">
-                            <h3 class="title">Премиум</h3>
-                            <p class="desc">Багамы, Майами, Тёплый ролл с лососем; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">Вес: 790г.</span>
-                            <input type='hidden' id='price-88' value='950' data-external_id=''>
-                        </div>
-
-                        <div class="cost-line">
-                            <p class="cost">
-                                950₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="88">Добавить</div>
-                            </div>
-
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
+                                <div class="button-active hide">
+                                    <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span>
+                                    </div>
+                                    <div class="kolvo"><span>0</span></div>
+                                    <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="product-item ani st_item" id="item-86" data-price="855" data-tags="" data-pos="3">
-
-
-                    <div class="image cover">
-                        <a href="seti/86-set-50-na-50.html#">
-                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods03/11542295756444e1551c8358.41165723.jpg"></div>-->
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods03/11542295756444e1551c8358.41165723.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods03/11542295756444e1551c8358.41165723.jpg"
-                                           alt=""/></noscript>
-                        </a>
-
-                    </div>
-
-                    <div class="text">
-                        <a href="seti/86-set-50-na-50.html#">
-                            <h3 class="title">Сет 50 на 50</h3>
-                            <p class="desc">Филадельфия с огурцом, Чикен Чиз, Сицилия, Мальта, Аризона; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">Вес: 615г.</span>
-                            <input type='hidden' id='price-86' value='855' data-external_id=''>
-                        </div>
-
-                        <div class="cost-line">
-                            <p class="cost">
-                                855₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="86">Добавить</div>
-                            </div>
-
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item ani st_item" id="item-90" data-price="1380" data-tags="" data-pos="4">
-
-
-                    <div class="image cover">
-                        <a href="seti/90-set-samurai.html#">
-                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods03/20047748526444e2907e1b92.25335375.jpg"></div>-->
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods03/20047748526444e2907e1b92.25335375.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods03/20047748526444e2907e1b92.25335375.jpg"
-                                           alt=""/></noscript>
-                        </a>
-
-                    </div>
-
-                    <div class="text">
-                        <a href="seti/90-set-samurai.html#">
-                            <h3 class="title">сет Самурай</h3>
-                            <p class="desc">Рио, Фуджи, Сакура, Хосомаки запечённые с креветкой, Хосомаки запечённые с
-                                лососем; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">Вес: 1130г.</span>
-                            <input type='hidden' id='price-90' value='1380' data-external_id=''>
-                        </div>
-
-                        <div class="cost-line">
-                            <p class="cost">
-                                1380₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="90">Добавить</div>
-                            </div>
-
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
 
 
-            <div class="products_heading">
-                <h3 class="h2 s_h1">Запечённые роллы</h3>
-                <a class="button" href="zapechennie-rolli.html">Все</a>
-            </div>
-
-            <div class="products-grid st_grid">
-
-
-                <div class="product-item ani st_item" id="item-119" data-price="295" data-tags="" data-pos="1">
-
-
-                    <div class="image cover">
-                        <a href="zapechennie-rolli/119-rodos.html#">
-                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods11/16906933806444efd8661079.76886082.jpg"></div>-->
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods11/16906933806444efd8661079.76886082.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods11/16906933806444efd8661079.76886082.jpg"
-                                           alt=""/></noscript>
-                        </a>
-
-                        <a href="zapechennie-rolli/119-rodos.html#">
-                            <img class="s_h3 label" src="/client/admin/images/labels/label_chili.png" alt=""/>
-                        </a>
-                    </div>
-
-                    <div class="text">
-                        <a href="zapechennie-rolli/119-rodos.html#">
-                            <h3 class="title">Родос</h3>
-                            <p class="desc"> Мидии, снежный краб, сливочный сыр, огурец, соус спайси, соус унаги; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">8шт.   Вес: 310г.</span>
-                            <input type='hidden' id='price-119' value='295' data-external_id=''>
-                        </div>
-
-                        <div class="cost-line">
-                            <p class="cost">
-                                295₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="119">Добавить</div>
-                            </div>
-
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item ani st_item" id="item-128" data-price="299" data-tags="" data-pos="2">
-
-
-                    <div class="image cover">
-                        <a href="zapechennie-rolli/128-fudzhi.html#">
-                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods11/20895761656444f1f647e208.93859265.jpg"></div>-->
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods11/20895761656444f1f647e208.93859265.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods11/20895761656444f1f647e208.93859265.jpg"
-                                           alt=""/></noscript>
-                        </a>
-
-                        <a href="zapechennie-rolli/128-fudzhi.html#">
-                            <img class="s_h3 label" src="/client/admin/images/labels/label_chili.png" alt=""/>
-                        </a>
-                    </div>
-
-                    <div class="text">
-                        <a href="zapechennie-rolli/128-fudzhi.html#">
-                            <h3 class="title">Фуджи</h3>
-                            <p class="desc"> Копчёная курица, сливочный сыр, огурец, бонито, соус спайси; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">8шт.   Вес: 270г.</span>
-                            <input type='hidden' id='price-128' value='299' data-external_id=''>
-                        </div>
-
-                        <div class="cost-line">
-                            <p class="cost">
-                                299₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="128">Добавить</div>
-                            </div>
-
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item ani st_item" id="item-127" data-price="435" data-tags="" data-pos="3">
-
-
-                    <div class="image cover">
-                        <a href="zapechennie-rolli/127-florida.html#">
-                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods11/20555522556444f1ac725618.56438076.jpg"></div>-->
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods11/20555522556444f1ac725618.56438076.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods11/20555522556444f1ac725618.56438076.jpg"
-                                           alt=""/></noscript>
-                        </a>
-
-                    </div>
-
-                    <div class="text">
-                        <a href="zapechennie-rolli/127-florida.html#">
-                            <h3 class="title">Флорида</h3>
-                            <p class="desc">Лосось, тунец, сливочный сыр, зеленый лук, соус майо, соус сладкий
-                                чили; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">8шт.   Вес: 280г.</span>
-                            <input type='hidden' id='price-127' value='435' data-external_id=''>
-                        </div>
-
-                        <div class="cost-line">
-                            <p class="cost">
-                                435₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="127">Добавить</div>
-                            </div>
-
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item ani st_item" id="item-126" data-price="349" data-tags="" data-pos="4">
-
-
-                    <div class="image cover">
-                        <a href="zapechennie-rolli/126-feniks.html#">
-                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods11/12483930726444f1711950a9.97387752.jpg"></div>-->
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods11/12483930726444f1711950a9.97387752.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods11/12483930726444f1711950a9.97387752.jpg"
-                                           alt=""/></noscript>
-                        </a>
-
-                        <a href="zapechennie-rolli/126-feniks.html#">
-                            <img class="s_h3 label" src="/client/admin/images/labels/label_chili.png" alt=""/>
-                        </a>
-                    </div>
-
-                    <div class="text">
-                        <a href="zapechennie-rolli/126-feniks.html#">
-                            <h3 class="title">Феникс</h3>
-                            <p class="desc">Лосось, сливочный сыр, соус спайси, кунжут; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">8шт.   Вес: 270г.</span>
-                            <input type='hidden' id='price-126' value='349' data-external_id=''>
-                        </div>
-
-                        <div class="cost-line">
-                            <p class="cost">
-                                349₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="126">Добавить</div>
-                            </div>
-
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="products_heading">
-                <h3 class="h2 s_h1">Холодные роллы</h3>
-                <a class="button" href="holodnie-rolli.html">Все</a>
-            </div>
-
-            <div class="products-grid st_grid">
-
-
-                <div class="product-item ani st_item" id="item-41" data-price="370" data-tags="" data-pos="1">
-
-
-                    <div class="image cover">
-                        <a href="holodnie-rolli/41-filadelfija.html#">
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods01/17296378766443caa2b8e512.71362084.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods01/17296378766443caa2b8e512.71362084.jpg"
-                                           alt=""/></noscript>
-                        </a>
-
-                    </div>
-
-                    <div class="text">
-                        <a href="holodnie-rolli/41-filadelfija.html#">
-                            <h3 class="title">Филадельфия</h3>
-                            <p class="desc">Лосось, сливочный сыр; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">8шт.   Вес: 250г.</span>
-                            <input type='hidden' id='price-41' value='370' data-external_id=''>
-                        </div>
-
-                        <div class="cost-line">
-                            <p class="cost">
-                                370₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="41">Добавить</div>
-                            </div>
-
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item ani st_item" id="item-47" data-price="279" data-tags="" data-pos="2">
-
-
-                    <div class="image cover">
-                        <a href="holodnie-rolli/47-kalifornija.html#">
-                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods01/17544192646443cc040a36e7.43797993.jpg"></div>-->
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods01/17544192646443cc040a36e7.43797993.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods01/17544192646443cc040a36e7.43797993.jpg"
-                                           alt=""/></noscript>
-                        </a>
-
-                    </div>
-
-                    <div class="text">
-                        <a href="holodnie-rolli/47-kalifornija.html#">
-                            <h3 class="title">Калифорния</h3>
-                            <p class="desc"> Снежный краб, сливочный сыр, огурец, икра тобико; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">8шт.   Вес: 250г.</span>
-                            <input type='hidden' id='price-47' value='279' data-external_id=''>
-                        </div>
-
-                        <div class="cost-line">
-                            <p class="cost">
-                                279₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="47">Добавить</div>
-                            </div>
-
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item ani st_item" id="item-17" data-price="280" data-tags="" data-pos="3">
-
-
-                    <div class="image cover">
-                        <a href="holodnie-rolli/17-kanzas.html#">
-                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods01/2927656966443c3356c0722.57568297.jpg"></div>-->
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods01/2927656966443c3356c0722.57568297.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods01/2927656966443c3356c0722.57568297.jpg"
-                                           alt=""/></noscript>
-                        </a>
-
-                    </div>
-
-                    <div class="text">
-                        <a href="holodnie-rolli/17-kanzas.html#">
-                            <h3 class="title">Канзас</h3>
-                            <p class="desc"> Омлет томаго, сливочный сыр, снежный краб, соус майо, икра тобико, соус
-                                унаги; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">8шт/280гр</span>
-                            <input type='hidden' id='price-17' value='280' data-external_id=''>
-                        </div>
-
-                        <div class="cost-line">
-                            <p class="cost">
-                                280₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="17">Добавить</div>
-                            </div>
-
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-item ani st_item" id="item-42" data-price="389" data-tags="" data-pos="4">
-
-
-                    <div class="image cover">
-                        <a href="holodnie-rolli/42-filadelfija-s-ogurcom.html#">
-                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods01/3578897496443cad6011229.69659039.jpg"></div>-->
-                            <img class="lazyImg"
-                                 src="/client/images/noimg.png"
-                                 data-original="/client/admin/images/maxi/goods01/3578897496443cad6011229.69659039.jpg"
-                                 title="" alt=""/>
-                            <noscript><img src="/client/admin/images/maxi/goods01/3578897496443cad6011229.69659039.jpg"
-                                           alt=""/></noscript>
-                        </a>
-
-                    </div>
-
-                    <div class="text">
-                        <a href="holodnie-rolli/42-filadelfija-s-ogurcom.html#">
-                            <h3 class="title">Филадельфия с огурцом</h3>
-                            <p class="desc"> Лосось, сливочный сыр, огурец; </p>
-                        </a>
-
-                        <div class="weight">
-                            <span class="s_h3">8шт.   Вес: 260г.</span>
-                            <input type='hidden' id='price-42' value='389' data-external_id=''>
-                        </div>
-
-                        <div class="cost-line">
-                            <p class="cost">
-                                389₽
-                            </p>
-                            <div class="button-passive ">
-                                <div class="s_h3 addToCart" data-id="42">Добавить</div>
-                            </div>
-
-                            <div class="button-active hide">
-                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>
-                                <div class="kolvo"><span>0</span></div>
-                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            {{--            <div class="products_heading">--}}
+            {{--                <h3 class="h2 s_h1">Запечённые роллы</h3>--}}
+            {{--                <a class="button" href="zapechennie-rolli.html">Все</a>--}}
+            {{--            </div>--}}
+
+            {{--            <div class="products-grid st_grid">--}}
+
+
+            {{--                <div class="product-item ani st_item" id="item-119" data-price="295" data-tags="" data-pos="1">--}}
+
+
+            {{--                    <div class="image cover">--}}
+            {{--                        <a href="zapechennie-rolli/119-rodos.html#">--}}
+            {{--                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods11/16906933806444efd8661079.76886082.jpg"></div>-->--}}
+            {{--                            <img class="lazyImg"--}}
+            {{--                                 src="/client/images/noimg.png"--}}
+            {{--                                 data-original="/client/admin/images/maxi/goods11/16906933806444efd8661079.76886082.jpg"--}}
+            {{--                                 title="" alt=""/>--}}
+            {{--                            <noscript><img src="/client/admin/images/maxi/goods11/16906933806444efd8661079.76886082.jpg"--}}
+            {{--                                           alt=""/></noscript>--}}
+            {{--                        </a>--}}
+
+            {{--                        <a href="zapechennie-rolli/119-rodos.html#">--}}
+            {{--                            <img class="s_h3 label" src="/client/admin/images/labels/label_chili.png" alt=""/>--}}
+            {{--                        </a>--}}
+            {{--                    </div>--}}
+
+            {{--                    <div class="text">--}}
+            {{--                        <a href="zapechennie-rolli/119-rodos.html#">--}}
+            {{--                            <h3 class="title">Родос</h3>--}}
+            {{--                            <p class="desc"> Мидии, снежный краб, сливочный сыр, огурец, соус спайси, соус унаги; </p>--}}
+            {{--                        </a>--}}
+
+            {{--                        <div class="weight">--}}
+            {{--                            <span class="s_h3">8шт.   Вес: 310г.</span>--}}
+            {{--                            <input type='hidden' id='price-119' value='295' data-external_id=''>--}}
+            {{--                        </div>--}}
+
+            {{--                        <div class="cost-line">--}}
+            {{--                            <p class="cost">--}}
+            {{--                                295₽--}}
+            {{--                            </p>--}}
+            {{--                            <div class="button-passive ">--}}
+            {{--                                <div class="s_h3 addToCart" data-id="119">Добавить</div>--}}
+            {{--                            </div>--}}
+
+            {{--                            <div class="button-active hide">--}}
+            {{--                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>--}}
+            {{--                                <div class="kolvo"><span>0</span></div>--}}
+            {{--                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+
+            {{--                <div class="product-item ani st_item" id="item-128" data-price="299" data-tags="" data-pos="2">--}}
+
+
+            {{--                    <div class="image cover">--}}
+            {{--                        <a href="zapechennie-rolli/128-fudzhi.html#">--}}
+            {{--                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods11/20895761656444f1f647e208.93859265.jpg"></div>-->--}}
+            {{--                            <img class="lazyImg"--}}
+            {{--                                 src="/client/images/noimg.png"--}}
+            {{--                                 data-original="/client/admin/images/maxi/goods11/20895761656444f1f647e208.93859265.jpg"--}}
+            {{--                                 title="" alt=""/>--}}
+            {{--                            <noscript><img src="/client/admin/images/maxi/goods11/20895761656444f1f647e208.93859265.jpg"--}}
+            {{--                                           alt=""/></noscript>--}}
+            {{--                        </a>--}}
+
+            {{--                        <a href="zapechennie-rolli/128-fudzhi.html#">--}}
+            {{--                            <img class="s_h3 label" src="/client/admin/images/labels/label_chili.png" alt=""/>--}}
+            {{--                        </a>--}}
+            {{--                    </div>--}}
+
+            {{--                    <div class="text">--}}
+            {{--                        <a href="zapechennie-rolli/128-fudzhi.html#">--}}
+            {{--                            <h3 class="title">Фуджи</h3>--}}
+            {{--                            <p class="desc"> Копчёная курица, сливочный сыр, огурец, бонито, соус спайси; </p>--}}
+            {{--                        </a>--}}
+
+            {{--                        <div class="weight">--}}
+            {{--                            <span class="s_h3">8шт.   Вес: 270г.</span>--}}
+            {{--                            <input type='hidden' id='price-128' value='299' data-external_id=''>--}}
+            {{--                        </div>--}}
+
+            {{--                        <div class="cost-line">--}}
+            {{--                            <p class="cost">--}}
+            {{--                                299₽--}}
+            {{--                            </p>--}}
+            {{--                            <div class="button-passive ">--}}
+            {{--                                <div class="s_h3 addToCart" data-id="128">Добавить</div>--}}
+            {{--                            </div>--}}
+
+            {{--                            <div class="button-active hide">--}}
+            {{--                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>--}}
+            {{--                                <div class="kolvo"><span>0</span></div>--}}
+            {{--                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+
+            {{--                <div class="product-item ani st_item" id="item-127" data-price="435" data-tags="" data-pos="3">--}}
+
+
+            {{--                    <div class="image cover">--}}
+            {{--                        <a href="zapechennie-rolli/127-florida.html#">--}}
+            {{--                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods11/20555522556444f1ac725618.56438076.jpg"></div>-->--}}
+            {{--                            <img class="lazyImg"--}}
+            {{--                                 src="/client/images/noimg.png"--}}
+            {{--                                 data-original="/client/admin/images/maxi/goods11/20555522556444f1ac725618.56438076.jpg"--}}
+            {{--                                 title="" alt=""/>--}}
+            {{--                            <noscript><img src="/client/admin/images/maxi/goods11/20555522556444f1ac725618.56438076.jpg"--}}
+            {{--                                           alt=""/></noscript>--}}
+            {{--                        </a>--}}
+
+            {{--                    </div>--}}
+
+            {{--                    <div class="text">--}}
+            {{--                        <a href="zapechennie-rolli/127-florida.html#">--}}
+            {{--                            <h3 class="title">Флорида</h3>--}}
+            {{--                            <p class="desc">Лосось, тунец, сливочный сыр, зеленый лук, соус майо, соус сладкий--}}
+            {{--                                чили; </p>--}}
+            {{--                        </a>--}}
+
+            {{--                        <div class="weight">--}}
+            {{--                            <span class="s_h3">8шт.   Вес: 280г.</span>--}}
+            {{--                            <input type='hidden' id='price-127' value='435' data-external_id=''>--}}
+            {{--                        </div>--}}
+
+            {{--                        <div class="cost-line">--}}
+            {{--                            <p class="cost">--}}
+            {{--                                435₽--}}
+            {{--                            </p>--}}
+            {{--                            <div class="button-passive ">--}}
+            {{--                                <div class="s_h3 addToCart" data-id="127">Добавить</div>--}}
+            {{--                            </div>--}}
+
+            {{--                            <div class="button-active hide">--}}
+            {{--                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>--}}
+            {{--                                <div class="kolvo"><span>0</span></div>--}}
+            {{--                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+
+            {{--                <div class="product-item ani st_item" id="item-126" data-price="349" data-tags="" data-pos="4">--}}
+
+
+            {{--                    <div class="image cover">--}}
+            {{--                        <a href="zapechennie-rolli/126-feniks.html#">--}}
+            {{--                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods11/12483930726444f1711950a9.97387752.jpg"></div>-->--}}
+            {{--                            <img class="lazyImg"--}}
+            {{--                                 src="/client/images/noimg.png"--}}
+            {{--                                 data-original="/client/admin/images/maxi/goods11/12483930726444f1711950a9.97387752.jpg"--}}
+            {{--                                 title="" alt=""/>--}}
+            {{--                            <noscript><img src="/client/admin/images/maxi/goods11/12483930726444f1711950a9.97387752.jpg"--}}
+            {{--                                           alt=""/></noscript>--}}
+            {{--                        </a>--}}
+
+            {{--                        <a href="zapechennie-rolli/126-feniks.html#">--}}
+            {{--                            <img class="s_h3 label" src="/client/admin/images/labels/label_chili.png" alt=""/>--}}
+            {{--                        </a>--}}
+            {{--                    </div>--}}
+
+            {{--                    <div class="text">--}}
+            {{--                        <a href="zapechennie-rolli/126-feniks.html#">--}}
+            {{--                            <h3 class="title">Феникс</h3>--}}
+            {{--                            <p class="desc">Лосось, сливочный сыр, соус спайси, кунжут; </p>--}}
+            {{--                        </a>--}}
+
+            {{--                        <div class="weight">--}}
+            {{--                            <span class="s_h3">8шт.   Вес: 270г.</span>--}}
+            {{--                            <input type='hidden' id='price-126' value='349' data-external_id=''>--}}
+            {{--                        </div>--}}
+
+            {{--                        <div class="cost-line">--}}
+            {{--                            <p class="cost">--}}
+            {{--                                349₽--}}
+            {{--                            </p>--}}
+            {{--                            <div class="button-passive ">--}}
+            {{--                                <div class="s_h3 addToCart" data-id="126">Добавить</div>--}}
+            {{--                            </div>--}}
+
+            {{--                            <div class="button-active hide">--}}
+            {{--                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>--}}
+            {{--                                <div class="kolvo"><span>0</span></div>--}}
+            {{--                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+
+            {{--            </div>--}}
+
+
+            {{--            <div class="products_heading">--}}
+            {{--                <h3 class="h2 s_h1">Холодные роллы</h3>--}}
+            {{--                <a class="button" href="holodnie-rolli.html">Все</a>--}}
+            {{--            </div>--}}
+
+            {{--            <div class="products-grid st_grid">--}}
+
+
+            {{--                <div class="product-item ani st_item" id="item-41" data-price="370" data-tags="" data-pos="1">--}}
+
+
+            {{--                    <div class="image cover">--}}
+            {{--                        <a href="holodnie-rolli/41-filadelfija.html#">--}}
+            {{--                            <img class="lazyImg"--}}
+            {{--                                 src="/client/images/noimg.png"--}}
+            {{--                                 data-original="/client/admin/images/maxi/goods01/17296378766443caa2b8e512.71362084.jpg"--}}
+            {{--                                 title="" alt=""/>--}}
+            {{--                            <noscript><img src="/client/admin/images/maxi/goods01/17296378766443caa2b8e512.71362084.jpg"--}}
+            {{--                                           alt=""/></noscript>--}}
+            {{--                        </a>--}}
+
+            {{--                    </div>--}}
+
+            {{--                    <div class="text">--}}
+            {{--                        <a href="holodnie-rolli/41-filadelfija.html#">--}}
+            {{--                            <h3 class="title">Филадельфия</h3>--}}
+            {{--                            <p class="desc">Лосось, сливочный сыр; </p>--}}
+            {{--                        </a>--}}
+
+            {{--                        <div class="weight">--}}
+            {{--                            <span class="s_h3">8шт.   Вес: 250г.</span>--}}
+            {{--                            <input type='hidden' id='price-41' value='370' data-external_id=''>--}}
+            {{--                        </div>--}}
+
+            {{--                        <div class="cost-line">--}}
+            {{--                            <p class="cost">--}}
+            {{--                                370₽--}}
+            {{--                            </p>--}}
+            {{--                            <div class="button-passive ">--}}
+            {{--                                <div class="s_h3 addToCart" data-id="41">Добавить</div>--}}
+            {{--                            </div>--}}
+
+            {{--                            <div class="button-active hide">--}}
+            {{--                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>--}}
+            {{--                                <div class="kolvo"><span>0</span></div>--}}
+            {{--                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+
+            {{--                <div class="product-item ani st_item" id="item-47" data-price="279" data-tags="" data-pos="2">--}}
+
+
+            {{--                    <div class="image cover">--}}
+            {{--                        <a href="holodnie-rolli/47-kalifornija.html#">--}}
+            {{--                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods01/17544192646443cc040a36e7.43797993.jpg"></div>-->--}}
+            {{--                            <img class="lazyImg"--}}
+            {{--                                 src="/client/images/noimg.png"--}}
+            {{--                                 data-original="/client/admin/images/maxi/goods01/17544192646443cc040a36e7.43797993.jpg"--}}
+            {{--                                 title="" alt=""/>--}}
+            {{--                            <noscript><img src="/client/admin/images/maxi/goods01/17544192646443cc040a36e7.43797993.jpg"--}}
+            {{--                                           alt=""/></noscript>--}}
+            {{--                        </a>--}}
+
+            {{--                    </div>--}}
+
+            {{--                    <div class="text">--}}
+            {{--                        <a href="holodnie-rolli/47-kalifornija.html#">--}}
+            {{--                            <h3 class="title">Калифорния</h3>--}}
+            {{--                            <p class="desc"> Снежный краб, сливочный сыр, огурец, икра тобико; </p>--}}
+            {{--                        </a>--}}
+
+            {{--                        <div class="weight">--}}
+            {{--                            <span class="s_h3">8шт.   Вес: 250г.</span>--}}
+            {{--                            <input type='hidden' id='price-47' value='279' data-external_id=''>--}}
+            {{--                        </div>--}}
+
+            {{--                        <div class="cost-line">--}}
+            {{--                            <p class="cost">--}}
+            {{--                                279₽--}}
+            {{--                            </p>--}}
+            {{--                            <div class="button-passive ">--}}
+            {{--                                <div class="s_h3 addToCart" data-id="47">Добавить</div>--}}
+            {{--                            </div>--}}
+
+            {{--                            <div class="button-active hide">--}}
+            {{--                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>--}}
+            {{--                                <div class="kolvo"><span>0</span></div>--}}
+            {{--                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+
+            {{--                <div class="product-item ani st_item" id="item-17" data-price="280" data-tags="" data-pos="3">--}}
+
+
+            {{--                    <div class="image cover">--}}
+            {{--                        <a href="holodnie-rolli/17-kanzas.html#">--}}
+            {{--                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods01/2927656966443c3356c0722.57568297.jpg"></div>-->--}}
+            {{--                            <img class="lazyImg"--}}
+            {{--                                 src="/client/images/noimg.png"--}}
+            {{--                                 data-original="/client/admin/images/maxi/goods01/2927656966443c3356c0722.57568297.jpg"--}}
+            {{--                                 title="" alt=""/>--}}
+            {{--                            <noscript><img src="/client/admin/images/maxi/goods01/2927656966443c3356c0722.57568297.jpg"--}}
+            {{--                                           alt=""/></noscript>--}}
+            {{--                        </a>--}}
+
+            {{--                    </div>--}}
+
+            {{--                    <div class="text">--}}
+            {{--                        <a href="holodnie-rolli/17-kanzas.html#">--}}
+            {{--                            <h3 class="title">Канзас</h3>--}}
+            {{--                            <p class="desc"> Омлет томаго, сливочный сыр, снежный краб, соус майо, икра тобико, соус--}}
+            {{--                                унаги; </p>--}}
+            {{--                        </a>--}}
+
+            {{--                        <div class="weight">--}}
+            {{--                            <span class="s_h3">8шт/280гр</span>--}}
+            {{--                            <input type='hidden' id='price-17' value='280' data-external_id=''>--}}
+            {{--                        </div>--}}
+
+            {{--                        <div class="cost-line">--}}
+            {{--                            <p class="cost">--}}
+            {{--                                280₽--}}
+            {{--                            </p>--}}
+            {{--                            <div class="button-passive ">--}}
+            {{--                                <div class="s_h3 addToCart" data-id="17">Добавить</div>--}}
+            {{--                            </div>--}}
+
+            {{--                            <div class="button-active hide">--}}
+            {{--                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>--}}
+            {{--                                <div class="kolvo"><span>0</span></div>--}}
+            {{--                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+
+            {{--                <div class="product-item ani st_item" id="item-42" data-price="389" data-tags="" data-pos="4">--}}
+
+
+            {{--                    <div class="image cover">--}}
+            {{--                        <a href="holodnie-rolli/42-filadelfija-s-ogurcom.html#">--}}
+            {{--                            <!--<div class="image-flex"><img src="/client/admin/images/maxi/goods01/3578897496443cad6011229.69659039.jpg"></div>-->--}}
+            {{--                            <img class="lazyImg"--}}
+            {{--                                 src="/client/images/noimg.png"--}}
+            {{--                                 data-original="/client/admin/images/maxi/goods01/3578897496443cad6011229.69659039.jpg"--}}
+            {{--                                 title="" alt=""/>--}}
+            {{--                            <noscript><img src="/client/admin/images/maxi/goods01/3578897496443cad6011229.69659039.jpg"--}}
+            {{--                                           alt=""/></noscript>--}}
+            {{--                        </a>--}}
+
+            {{--                    </div>--}}
+
+            {{--                    <div class="text">--}}
+            {{--                        <a href="holodnie-rolli/42-filadelfija-s-ogurcom.html#">--}}
+            {{--                            <h3 class="title">Филадельфия с огурцом</h3>--}}
+            {{--                            <p class="desc"> Лосось, сливочный сыр, огурец; </p>--}}
+            {{--                        </a>--}}
+
+            {{--                        <div class="weight">--}}
+            {{--                            <span class="s_h3">8шт.   Вес: 260г.</span>--}}
+            {{--                            <input type='hidden' id='price-42' value='389' data-external_id=''>--}}
+            {{--                        </div>--}}
+
+            {{--                        <div class="cost-line">--}}
+            {{--                            <p class="cost">--}}
+            {{--                                389₽--}}
+            {{--                            </p>--}}
+            {{--                            <div class="button-passive ">--}}
+            {{--                                <div class="s_h3 addToCart" data-id="42">Добавить</div>--}}
+            {{--                            </div>--}}
+
+            {{--                            <div class="button-active hide">--}}
+            {{--                                <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span></div>--}}
+            {{--                                <div class="kolvo"><span>0</span></div>--}}
+            {{--                                <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+
+            {{--            </div>--}}
 
 
         </section>
@@ -1470,39 +1151,11 @@
 
 
                 <ul class="f_cats">
-                    <li>
-                        <a href="holodnie-rolli/index.html">Холодные роллы</a>
-                    </li>
-                    <li>
-                        <a href="zapechennie-rolli/index.html">Запечённые роллы</a>
-                    </li>
-                    <li>
-                        <a href="teplie-rolli/index.html">Тёплые роллы</a>
-                    </li>
-                    <li>
-                        <a href="seti/index.html">Сеты</a>
-                    </li>
-                    <li>
-                        <a href="poke/index.html">Поке</a>
-                    </li>
-                    <li>
-                        <a href="tom-jam/index.html">Том ям</a>
-                    </li>
-                    <li>
-                        <a href="gunkani/index.html">Гунканы</a>
-                    </li>
-                    <li>
-                        <a href="zakuski/index.html">Закуски</a>
-                    </li>
-                    <li>
-                        <a href="sandvichi/index.html">Сэндвичи</a>
-                    </li>
-                    <li>
-                        <a href="sousi/index.html">Соусы</a>
-                    </li>
-                    <li>
-                        <a href="napitki/index.html">Напитки</a>
-                    </li>
+                    @foreach($categories as $category)
+                        <li>
+                            <a href="{{route('category', $category->uid)}}">{{$category->title}}</a>
+                        </li>
+                    @endforeach
                 </ul>
 
 
@@ -1606,7 +1259,6 @@
 
     checkCookies();
 </script>
-
 
 
 </body>

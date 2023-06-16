@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\Client\ClientController::class, 'index'])->name('index');
+Route::get('/product-category/{id}', [App\Http\Controllers\Client\ClientController::class, 'category'])->name('category');
+Route::get('/product/{id}', [App\Http\Controllers\Client\ClientController::class, 'product'])->name('product');
 
 Auth::routes();
 
