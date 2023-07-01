@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('local_pickups', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->default("Самовывоз");
             $table->foreignId('delivery_zone_id')
                 ->constrained('delivery_zones')
                 ->onUpdate('cascade')

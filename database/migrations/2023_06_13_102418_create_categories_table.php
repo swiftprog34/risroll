@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('uid');
+            $table->string('meta_title')->default("");
+            $table->text('meta_description')->default("");
             $table->string('title');
             $table->text('image');
             $table->integer('enabled');

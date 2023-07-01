@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('deliveries', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->default("Доставка");;
+            $table->integer('price');
             $table->foreignId('delivery_zone_id')
                 ->constrained('delivery_zones')
                 ->onUpdate('cascade')

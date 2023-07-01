@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('sliders', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->default("");
+            $table->text('description')->default("");
+            $table->string('image');
             $table->foreignId('site_id')
                 ->constrained('sites')
                 ->onUpdate('cascade')

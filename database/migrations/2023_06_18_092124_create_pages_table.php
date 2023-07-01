@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
+            $table->string('meta_title')->default("");
+            $table->text('meta_description')->default("");
+            $table->string('title');
+            $table->text('description')->default("");
             $table->foreignId('site_id')
                 ->constrained('sites')
                 ->onUpdate('cascade')

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('postcodes', function (Blueprint $table) {
             $table->id();
+            $table->string('postcode');
             $table->foreignId('delivery_zone_id')
                 ->constrained('delivery_zones')
                 ->onUpdate('cascade')

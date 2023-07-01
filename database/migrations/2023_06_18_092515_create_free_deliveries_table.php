@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('free_deliveries', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->default("Бесплатная доставка");
+            $table->integer('min_sum');
             $table->foreignId('delivery_zone_id')
                 ->constrained('delivery_zones')
                 ->onUpdate('cascade')

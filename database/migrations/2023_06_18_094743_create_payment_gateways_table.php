@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('payment_gateways', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
             $table->foreignId('site_id')
                 ->constrained('sites')
                 ->onUpdate('cascade')
