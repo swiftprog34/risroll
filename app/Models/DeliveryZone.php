@@ -10,6 +10,8 @@ class DeliveryZone extends Model
 {
     use HasFactory;
 
+    protected $fillable = ["title", "site_id"];
+
     public function postcodes(): HasMany
     {
         return $this->hasMany(Postcode::class);

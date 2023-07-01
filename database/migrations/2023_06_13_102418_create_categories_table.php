@@ -25,6 +25,8 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();
+            $table->Text("header_description")->default("");
+            $table->Text("footer_description")->default("");
         });
     }
 

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->String('prefix');
             $table->String('restaurantID');
             $table->String('wid');
+            $table->Text("header_description")->default("");
+            $table->Text("footer_description")->default("");
         });
     }
 

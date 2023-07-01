@@ -11,7 +11,7 @@ class Site extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id', 'city', 'prefix', 'restaurantID', 'wid'
+        'id', 'city', 'prefix', 'restaurantID', 'wid', 'header_description', 'footer_description'
     ];
 
     public function pickupPoints(): HasMany
