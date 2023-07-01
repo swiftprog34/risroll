@@ -144,7 +144,7 @@
                                 <div class="form-group">
                                     <label for="pickupInput">Новая точка самовывоза</label>
                                     <input type="text" name="name" class="form-control" id="pickupInput"
-                                           placeholder="Номер телефона (только цифры)" required>
+                                           placeholder="Адрес точки самовывоза" required>
                                 </div>
 
                                 <input type="hidden" name="site_id" value="{{ $site['id'] }}" required>

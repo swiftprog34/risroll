@@ -13,15 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::group(['prefix' => '{city}'], function() {
-    Route::get('/', [App\Http\Controllers\Client\ClientController::class, 'index'])->name('index');
-    Route::get('/product-category/{id}', [App\Http\Controllers\Client\ClientController::class, 'category'])->name('category');
-    Route::get('/product/{id}', [App\Http\Controllers\Client\ClientController::class, 'product'])->name('product');
-//});
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
@@ -39,3 +30,8 @@ Route::middleware('role:admin')->prefix('admin_panel')->group(function () {
 });
 
 
+Route::prefix('{city?}')->middleware('choose_city')->group(function () {
+    Route::get('/', [App\Http\Controllers\Client\ClientController::class, 'index'])->name('index');
+    Route::get('/product-category/{id}', [App\Http\Controllers\Client\ClientController::class, 'category'])->name('category');
+    Route::get('/product/{id}', [App\Http\Controllers\Client\ClientController::class, 'product'])->name('product');
+});

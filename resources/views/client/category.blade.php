@@ -228,7 +228,7 @@
             <div class="container">
 
                 <div class="logo">
-                    <a class="" href="index.html" style="margin: 0;">
+                    <a class="" href="{{route('index')}}" style="margin: 0;">
                         <img style="position: relative; left: -2px;" src="/client/images/logo.png" alt=""/>
                     </a>
                 </div>
@@ -264,7 +264,7 @@
                         <div class="menu_item">
                             <img class="preview" src="/client/admin/images/categories/goods01.png@20230423141958"
                                  alt="{{$category->title}}"/>
-                            <a href="{{route('category', $category->uid)}}">{{$category->title}}</a>
+                            <a href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}">{{$category->title}}</a>
                         </div>
                     @endforeach
 
@@ -275,7 +275,7 @@
                         <ul class="submenu h4">
                             @foreach($categories as $category)
                                 @if($loop->index > 8)
-                                    <li><a href="{{route('category', $category->uid)}}">{{$category->title}}</a></li>
+                                    <li><a href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}">{{$category->title}}</a></li>
                                 @endif
                             @endforeach
                         </ul>
@@ -358,7 +358,7 @@
 
             <div class="win_categories_grid">
                 @foreach($categories as $category)
-                    <a class="item r3" href="{{route('category', $category->uid)}}">
+                    <a class="item r3" href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}">
                         <img class="photo" src="/client/admin/images/categories/goods01.png@20230423141958"
                              alt="{{$category->title}}"/>
                         <span class="cat">{{$category->title}}</span>
@@ -454,7 +454,7 @@
     <!-- Боковая панель для мобильной версии -->
     <div class="sidebar">
 
-        <a class="logo" href="index.html">
+        <a class="logo" href="{{route('index')}}">
             <img src="images/logo.png" title="" alt=""/>
         </a>
 
@@ -474,7 +474,7 @@
         <label>Наше меню:</label>
         <div class="menu_items">
             @foreach($categories as $category)
-                <a href="{{route('category', $category->uid)}}">
+                <a href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}">
                     <img src="/client/admin/images/categories/goods01.png@20230423141958" width="40px"
                          alt="{{$category->title}}"/>
                     {{ $category->title }} </a>
@@ -565,7 +565,7 @@
                          data-tags="" data-pos="{{$loop->index}}">
 
                         <div class="image cover">
-                            <a href="{{route('product', $product->uid)}}">
+                            <a href="{{route('product', ['city' => session('city'), 'id' => $product->uid])}}">
                                 <!--<div class="image-flex"><img src="https://ris72.ru/admin/images/maxi/goods01/17296378766443caa2b8e512.71362084.jpg"></div>-->
                                 <img class="lazyImg"
                                      src="images/noimg.png"
@@ -696,7 +696,7 @@
 
         <div class="home-slider3 owl-carousel owl-theme ">
             @foreach($categories as $category)
-            <a class="slider_item " href="{{route('category', $category->uid)}}">
+            <a class="slider_item " href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}">
                 <img src="admin/images/categories/goods01.png@20230423141958" alt="{{$category->title}}"
                      title="{{$category->title}}"/>
                 <span class="cat">{{$category->title}}</span>
@@ -768,7 +768,7 @@
             <ul class="f_cats">
                 @foreach($categories as $category)
                     <li>
-                        <a href="{{route('category', $category->uid)}}">{{$category->title}}</a>
+                        <a href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}">{{$category->title}}</a>
                     </li>
                 @endforeach
             </ul>

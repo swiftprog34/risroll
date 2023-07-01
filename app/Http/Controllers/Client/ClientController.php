@@ -21,7 +21,7 @@ class ClientController extends Controller
         ]);
     }
 
-    public function category($uid)
+    public function category($city, $uid)
     {
         $currentCategory = Category::where(["uid" => $uid])->firstOrFail();
         $categories = Category::all();
@@ -35,7 +35,7 @@ class ClientController extends Controller
         ]);
     }
 
-    public function product($uid)
+    public function product($city, $uid)
     {
         $categories = Category::all();
         $categoriesMainDesktop = Category::take(8)->get();
@@ -54,6 +54,10 @@ class ClientController extends Controller
 
     public function checkout()
     {
+
+    }
+
+    public function chooseCity($choosedCity) {
 
     }
 }

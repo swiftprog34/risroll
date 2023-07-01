@@ -596,7 +596,7 @@
     <!-- Боковая панель для мобильной версии -->
     <div class="sidebar">
 
-        <a class="logo" href="../index.html">
+        <a class="logo" href="{{route('index')}}">
             <img src="/client/images/logo.png" title="" alt="" />
         </a>
 
@@ -693,7 +693,7 @@
             </span>
             ->
             <span itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
-                <a itemprop="item" title="Запечённые роллы" href="{{route('product', $product->uid)}}">
+                <a itemprop="item" title="Запечённые роллы" href="{{route('product', ['city' => session('city'), 'id' =>  $product->uid])}}">
                     <span itemprop="name">{{$product->title}}</span>
                     <meta itemprop="position" content="3">
                 </a>

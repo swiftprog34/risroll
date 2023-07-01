@@ -10,7 +10,7 @@
     <meta name="description"
           content="Risroll - Заказать доставку суши сетов и роллов в городе Тюмень по доступным ценам!">
     <meta name="keywords" content=" ">
-    <link rel="canonical" href="index.html">
+    <link rel="canonical" href="{{route('index')}}">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/client/images/favicon/apple-icon-57x57.png@v=2">
     <link rel="apple-touch-icon" sizes="60x60" href="/client/images/favicon/apple-icon-60x60.png@v=2">
@@ -214,7 +214,7 @@
             <div class="container">
 
                 <div class="logo">
-                    <a class="" href="index.html" style="margin: 0;">
+                    <a class="" href="{{route('index', session('city'))}}" style="margin: 0;">
                         <img style="position: relative; left: -2px;" src="/client/images/logo.png" alt=""/>
                     </a>
                 </div>
@@ -228,7 +228,7 @@
                     <div class="second_row">
                         <a href="akcii.html">Акции</a>
                         <a href="https://ris72.ru/%D0%A0%D1%94%D0%A0%D1%95%D0%A0%D0%85%D0%A1%E2%80%9A%D0%A0%C2%B0%D0%A0%D1%94%D0%A1%E2%80%9A%D0%A1%E2%80%B9">Контакты</a>
-                        <a href="https://ris72.ru/%D0%A0%D2%91%D0%A0%D1%95%D0%A1%D0%83%D0%A1%E2%80%9A%D0%A0%C2%B0%D0%A0%D0%86%D0%A0%D1%94%D0%A0%C2%B0">Доставка
+                        <a href="{{route('index', 'saratov')}}">Доставка
                             и Оплата</a>
 
                     </div>
@@ -250,7 +250,7 @@
                         <div class="menu_item">
                             <img class="preview" src="/client/admin/images/categories/goods01.png@20230423141958"
                                  alt="Холодные роллы"/>
-                            <a href="{{route('category', $category->uid)}}">{{$category->title}}</a>
+                            <a href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}">{{$category->title}}</a>
                         </div>
                     @endforeach
 
@@ -261,7 +261,7 @@
                         <ul class="submenu h4">
                             @foreach($categories as $category)
                                 @if($loop->index > 8)
-                                    <li><a href="{{route('category', $category->uid)}}">{{$category->title}}</a></li>
+                                    <li><a href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}">{{$category->title}}</a></li>
                                 @endif
                             @endforeach
                         </ul>
@@ -333,7 +333,7 @@
                     <img src="/client/images/icons/ic_link.png">
                 </a>
                 <a class="item r2"
-                   href="https://ris72.ru/%D0%A0%D2%91%D0%A0%D1%95%D0%A1%D0%83%D0%A1%E2%80%9A%D0%A0%C2%B0%D0%A0%D0%86%D0%A0%D1%94%D0%A0%C2%B0">
+                   href="{{route('index', 'saratov')}}">
                     <i class="ic_win_info black"></i>
                     <span>Доставка и Оплата</span>
                     <img src="/client/images/icons/ic_link.png">
@@ -343,7 +343,7 @@
 
             <div class="win_categories_grid">
                 @foreach($categories as $category)
-                    <a class="item r3" href="{{route('category', $category->uid)}}">
+                    <a class="item r3" href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}">
                         <img class="photo" src="/client/admin/images/categories/goods01.png@20230423141958"
                              alt="{{$category->title}}"/>
                         <span class="cat">{{$category->title}}</span>
@@ -439,7 +439,7 @@
     <!-- Боковая панель для мобильной версии -->
     <div class="sidebar">
 
-        <a class="logo" href="index.html">
+        <a class="logo" href="{{route('index')}}">
             <img src="/client/images/logo.png" title="" alt=""/>
         </a>
 
@@ -453,13 +453,13 @@
 
         <a href="index.html">Акции</a>
         <a href="index.html">Контакты</a>
-        <a href="index.html">Доставка и Оплата</a>
+        <a href="{{route('index', 'saratov')}}">Доставка и Оплата</a>
 
 
         <label>Наше меню:</label>
         <div class="menu_items">
             @foreach($categories as $category)
-                <a href="{{route('category', $category->uid)}}">
+                <a href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}">
                     <img src="/client/admin/images/categories/goods01.png@20230423141958" width="40px"
                          alt="{{$category->title}}"/>
                     {{ $category->title }} </a>
@@ -571,7 +571,7 @@
         <div class="container">
             <div class="heading mobile-none000">
                 <div class="line"><img src="/client/images/de-line-1.png" alt=""/></div>
-                <h1>RisRoll - Доставка готовых блюд в Тюмени! {{session()->getId()}}</h1>
+                <h1>RisRoll - Доставка готовых блюд в Тюмени!</h1>
                 <div class="line"><img src="/client/images/de-line-1.png" alt=""/></div>
             </div>
 
@@ -608,7 +608,7 @@
 
             <div class="container">
                 @foreach($categories as $category)
-                    <a class="category" href="{{route('category', $category->uid)}}"
+                    <a class="category" href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}"
                        onclick="(document.getElementById('page-preloader').style.display='flex')">
                         <img class=""
                              src="/client/admin/images//client/admin/images/categories/goods01.png@20230423141958"
@@ -637,7 +637,7 @@
                     <div class="product-item ani st_item" id="item-{{$set->id}}" data-price="{{$set->price}}"
                          data-tags="" data-pos="{{$loop->index}}">
                         <div class="image cover">
-                            <a href="{{route('product', $set->uid)}}">
+                            <a href="{{route('product', ['city' => session('city'), 'id' => $set->uid])}}">
                                 <img class="lazyImg"
                                      src="/client/images/noimg.png"
                                      data-original="/client/admin/images/maxi/goods03/8127685816444e1d26efbd1.33806843.jpg"
@@ -1153,7 +1153,7 @@
                 <ul class="f_cats">
                     @foreach($categories as $category)
                         <li>
-                            <a href="{{route('category', $category->uid)}}">{{$category->title}}</a>
+                            <a href="{{route('category', ['city' => session('city'), 'id' => $category->uid])}}">{{$category->title}}</a>
                         </li>
                     @endforeach
                 </ul>

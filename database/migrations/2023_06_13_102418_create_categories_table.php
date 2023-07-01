@@ -17,6 +17,11 @@ return new class extends Migration
             $table->string('title');
             $table->text('image');
             $table->integer('enabled');
+            $table->integer('order');
+            $table->foreignId('site_id')
+                ->constrained('sites')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
