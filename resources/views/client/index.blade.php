@@ -633,52 +633,52 @@
             </div>
 
             <div class="products-grid st_grid">
-                @foreach($sety as $set)
-                    <div class="product-item ani st_item" id="item-{{$set->id}}" data-price="{{$set->price}}"
-                         data-tags="" data-pos="{{$loop->index}}">
-                        <div class="image cover">
-                            <a href="{{route('product', ['city' => session('city'), 'id' => $set->uid])}}">
-                                <img class="lazyImg"
-                                     src="/client/images/noimg.png"
-                                     data-original="/client/admin/images/maxi/goods03/8127685816444e1d26efbd1.33806843.jpg"
-                                     title="" alt=""/>
-                                <noscript><img
-                                        src="/client/admin/images/maxi/goods03/8127685816444e1d26efbd1.33806843.jpg"
-                                        alt=""/></noscript>
-                            </a>
+{{--                @foreach($sety as $set)--}}
+{{--                    <div class="product-item ani st_item" id="item-{{$set->id}}" data-price="{{$set->price}}"--}}
+{{--                         data-tags="" data-pos="{{$loop->index}}">--}}
+{{--                        <div class="image cover">--}}
+{{--                            <a href="{{route('product', ['city' => session('city'), 'id' => $set->uid])}}">--}}
+{{--                                <img class="lazyImg"--}}
+{{--                                     src="/client/images/noimg.png"--}}
+{{--                                     data-original="/client/admin/images/maxi/goods03/8127685816444e1d26efbd1.33806843.jpg"--}}
+{{--                                     title="" alt=""/>--}}
+{{--                                <noscript><img--}}
+{{--                                        src="/client/admin/images/maxi/goods03/8127685816444e1d26efbd1.33806843.jpg"--}}
+{{--                                        alt=""/></noscript>--}}
+{{--                            </a>--}}
 
-                        </div>
+{{--                        </div>--}}
 
-                        <div class="text">
-                            <a href="seti/87-set-na-dvoih.html#">
-                                <h3 class="title">{{$set->title}}</h3>
-                                <p class="desc">{{$set->text}}</p>
-                            </a>
+{{--                        <div class="text">--}}
+{{--                            <a href="seti/87-set-na-dvoih.html#">--}}
+{{--                                <h3 class="title">{{$set->title}}</h3>--}}
+{{--                                <p class="desc">{{$set->text}}</p>--}}
+{{--                            </a>--}}
 
-                            <div class="weight">
-                                <span class="s_h3">Вес: xxxx.</span>
-                                <input type='hidden' id='price-{{$set->id}}' value='{{$set->price}}'
-                                       data-external_id=''>
-                            </div>
+{{--                            <div class="weight">--}}
+{{--                                <span class="s_h3">Вес: xxxx.</span>--}}
+{{--                                <input type='hidden' id='price-{{$set->id}}' value='{{$set->price}}'--}}
+{{--                                       data-external_id=''>--}}
+{{--                            </div>--}}
 
-                            <div class="cost-line">
-                                <p class="cost">
-                                    {{$set->price}}₽
-                                </p>
-                                <div class="button-passive ">
-                                    <div class="s_h3 addToCart" data-id="{{$set->id}}">Добавить</div>
-                                </div>
+{{--                            <div class="cost-line">--}}
+{{--                                <p class="cost">--}}
+{{--                                    {{$set->price}}₽--}}
+{{--                                </p>--}}
+{{--                                <div class="button-passive ">--}}
+{{--                                    <div class="s_h3 addToCart" data-id="{{$set->id}}">Добавить</div>--}}
+{{--                                </div>--}}
 
-                                <div class="button-active hide">
-                                    <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span>
-                                    </div>
-                                    <div class="kolvo"><span>0</span></div>
-                                    <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
+{{--                                <div class="button-active hide">--}}
+{{--                                    <div class="updateCart minus animinus" data-cid="0" data-type="-"><span>-</span>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="kolvo"><span>0</span></div>--}}
+{{--                                    <div class="updateCart plus aniplus" data-cid="0" data-type="+"><span>+</span></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
             </div>
 
 

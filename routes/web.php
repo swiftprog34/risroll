@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware('role:admin')->prefix('admin_panel')->group(function () {
+Route::middleware('role:admin')->prefix('admin-panel')->group(function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('homeAdmin');
     Route::resource('site', \App\Http\Controllers\Admin\SiteController::class);
     Route::resource('product', \App\Http\Controllers\Admin\ProductController::class);

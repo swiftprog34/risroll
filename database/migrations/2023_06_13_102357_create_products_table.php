@@ -15,14 +15,14 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('uid');
             $table->string('meta_title')->default("");
-            $table->text('meta_description')->default("");
+            $table->text('meta_description');
             $table->string('title');
             $table->string('img');
             $table->integer('price');
             $table->text('text');
             $table->string('sku');
             $table->foreignId('category_id')
-                ->constrained('sites')
+                ->constrained('categories')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->foreignId('site_id')

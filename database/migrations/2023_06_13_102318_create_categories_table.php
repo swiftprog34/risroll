@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('uid');
             $table->string('meta_title')->default("");
-            $table->text('meta_description')->default("");
+            $table->text('meta_description');
             $table->string('title');
             $table->text('image');
             $table->integer('enabled');
@@ -25,8 +25,9 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();
-            $table->Text("header_description")->default("");
-            $table->Text("footer_description")->default("");
+            $table->text("header_description");
+            $table->text("footer_description");
+            $table->boolean('add_to_main_page');
         });
     }
 

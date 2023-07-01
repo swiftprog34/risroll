@@ -13,11 +13,11 @@ class ClientController extends Controller
     {
         $categories = Category::all();
         $categoriesMainDesktop = Category::take(8)->get();
-        $sety = Product::where(["cat_id" => '780552575912511570'])->take(4)->get();
+//        $sety = Category::all()->first->products()->get();
         return view('client.index', [
             "categoriesMainDesktop" => $categoriesMainDesktop,
             "categories" => $categories,
-            "sety" => $sety
+//            "sety" => $sety
         ]);
     }
 
